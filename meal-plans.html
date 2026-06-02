@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Plans & Grocery List - Chef's Palette</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-palette"></i> Chef's <span>Palette</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="meal-plans.html" class="active">Meal Plans</a>
+            <a href="community.html">Community</a>
+        </nav>
+        <div class="auth-buttons" id="auth-ui-container">
+            <button class="btn-login" id="nav-login-btn">Log In</button>
+            <button class="btn-signup" id="nav-signup-btn">Sign Up</button>
+        </div>
+    </header>
+
+    <div class="planner-wrapper container">
+        
+        <main class="planner-main">
+            <div class="planner-header">
+                <h2><i class="fa-solid fa-calendar-week"></i> Weekly Meal Menu</h2>
+                <p>Add dishes to your week to automatically compile your grocery list.</p>
+            </div>
+
+            <div class="calendar-grid" id="weekly-calendar">
+                <div class="day-card" data-day="monday">
+                    <h3>Monday</h3>
+                    <div class="meal-slot" data-meal="breakfast">
+                        <span class="slot-label">Breakfast</span>
+                        <div class="slot-content"><button class="btn-add-meal">+ Add Meal</button></div>
+                    </div>
+                    <div class="meal-slot" data-meal="lunch">
+                        <span class="slot-label">Lunch</span>
+                        <div class="slot-content"><button class="btn-add-meal">+ Add Meal</button></div>
+                    </div>
+                    <div class="meal-slot" data-meal="dinner">
+                        <span class="slot-label">Dinner</span>
+                        <div class="slot-content"><button class="btn-add-meal">+ Add Meal</button></div>
+                    </div>
+                </div>
+
+                <div class="day-card" data-day="tuesday">
+                    <h3>Tuesday</h3>
+                    <div class="meal-slot" data-meal="breakfast"><span class="slot-label">Breakfast</span><div class="slot-content"><button class="btn-add-meal">+ Add Meal</button></div></div>
+                    <div class="meal-slot" data-meal="lunch"><span class="slot-label">Lunch</span><div class="slot-content"><button class="btn-add-meal">+ Add Meal</button></div></div>
+                    <div class="meal-slot" data-meal="dinner"><span class="slot-label">Dinner</span><div class="slot-content"><button class="btn-add-meal">+ Add Meal</button></div></div>
+                </div>
+
+                <div class="day-card" data-day="wednesday">
+                    <h3>Wednesday</h3>
+                    <div class="meal-slot" data-meal="breakfast"><span class="slot-label">Breakfast</span><div class="slot-content"><button class="btn-add-meal">+ Add Meal</button></div></div>
+                    <div class="meal-slot" data-meal="lunch"><span class="slot-label">Lunch</span><div class="slot-content"><button class="btn-add-meal">+ Add Meal</button></div></div>
+                    <div class="meal-slot" data-meal="dinner"><span class="slot-label">Dinner</span><div class="slot-content"><button class="btn-add-meal">+ Add Meal</button></div></div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="grocery-sidebar">
+            <div class="grocery-card-box">
+                <h3><i class="fa-solid fa-basket-shopping"></i> Automated Grocery List</h3>
+                <p class="grocery-subtitle">Ingredients are intelligently combined and categorized by aisle.</p>
+                
+                <div id="grocery-list-target">
+                    <p class="empty-list-text">Your schedule is empty. Add recipes to generate a automated shopping list!</p>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <div class="modal-overlay hidden" id="recipe-details-modal">
+        <div class="modal-box recipe-detail-box">
+            <button class="close-modal-btn" id="close-details-btn">&times;</button>
+            <div id="recipe-detail-content-target"></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="signup-modal">
+        <div class="modal-box">
+            <button class="close-modal-btn">&times;</button>
+            <h2>Create Account</h2>
+            <form id="signup-form">
+                <div class="form-group"><label>Username</label><input type="text" id="signup-username" required></div>
+                <div class="form-group"><label>Email</label><input type="email" id="signup-email" required></div>
+                <div class="form-group"><label>Password</label><input type="password" id="signup-password" required></div>
+                <button type="submit" class="btn-auth-submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="login-modal">
+        <div class="modal-box">
+            <button class="close-modal-btn">&times;</button>
+            <h2>Welcome Back</h2>
+            <form id="login-form">
+                <div class="form-group"><label>Email</label><input type="email" id="login-email" required></div>
+                <div class="form-group"><label>Password</label><input type="password" id="login-password" required></div>
+                <button type="submit" class="btn-auth-submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

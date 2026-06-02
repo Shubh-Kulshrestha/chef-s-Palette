@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Hub - Chef's Palette</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-palette"></i> Chef's <span>Palette</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="meal-plans.html">Meal Plans</a>
+            <a href="community.html" class="active">Community</a>
+        </nav>
+        <div class="auth-buttons" id="auth-ui-container">
+            <button class="btn-login" id="nav-login-btn">Log In</button>
+            <button class="btn-signup" id="nav-signup-btn">Sign Up</button>
+        </div>
+    </header>
+
+    <div class="community-wrapper container">
+        
+        <main class="community-main">
+            <div class="planner-header">
+                <h2><i class="fa-solid fa-handshake-angle" style="color: var(--primary-color);"></i> Leftovers & Ingredient Market</h2>
+                <p>Don't let good food go to waste! Trade your extra ingredients with nearby home chefs.</p>
+            </div>
+
+            <div class="market-post-card id="market-input-card">
+                <h3><i class="fa-solid fa-circle-plus"></i> List Leftover Ingredients</h3>
+                <form id="market-post-form" style="margin-top: 15px;">
+                    <div style="display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 200px;">
+                            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px;">What item do you have extra of?</label>
+                            <input type="text" id="market-item-name" placeholder="e.g., 3 Leftover Lemons, Half a bunch of Cilantro" style="width:100%; padding:10px; border:1px solid #ebdcd0; border-radius:8px; outline:none;" required>
+                        </div>
+                        <div style="width: 180px;">
+                            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px;">Your Location/Block</label>
+                            <input type="text" id="market-item-location" placeholder="e.g., Block C, Room 302" style="width:100%; padding:10px; border:1px solid #ebdcd0; border-radius:8px; outline:none;" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-auth-submit" style="margin:0; width:auto; padding:10px 20px;"><i class="fa-solid fa-paper-plane"></i> Post Bulletin</button>
+                </form>
+            </div>
+
+            <div class="market-grid" id="market-listings-grid" style="margin-top: 30px;">
+                </div>
+        </main>
+
+        <aside class="community-sidebar">
+            <div class="grocery-card-box match-sidebar-box">
+                <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Taste Matcher Engine</h3>
+                <p class="grocery-subtitle">We algorithmically compare your meal plan options against the community to find your culinary twins!</p>
+                
+                <div id="taste-matches-target">
+                    </div>
+            </div>
+        </aside>
+    </div>
+
+    <div class="modal-overlay hidden" id="signup-modal">
+        <div class="modal-box">
+            <button class="close-modal-btn">&times;</button>
+            <h2>Create Account</h2>
+            <form id="signup-form">
+                <div class="form-group"><label>Username</label><input type="text" id="signup-username" required></div>
+                <div class="form-group"><label>Email</label><input type="email" id="signup-email" required></div>
+                <div class="form-group"><label>Password</label><input type="password" id="signup-password" required></div>
+                <button type="submit" class="btn-auth-submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="login-modal">
+        <div class="modal-box">
+            <button class="close-modal-btn">&times;</button>
+            <h2>Welcome Back</h2>
+            <form id="login-form">
+                <div class="form-group"><label>Email</label><input type="email" id="login-email" required></div>
+                <div class="form-group"><label>Password</label><input type="password" id="login-password" required></div>
+                <button type="submit" class="btn-auth-submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

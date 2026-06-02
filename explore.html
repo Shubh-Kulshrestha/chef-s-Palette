@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Recipes - Chef's Palette</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-palette"></i> Chef's <span>Palette</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="explore.html" class="active">Explore</a>
+            <a href="meal-plans.html">Meal Plans</a>
+            <a href="community.html">Community</a>
+        </nav>
+        <div class="auth-buttons" id="auth-ui-container">
+            <button class="btn-login" id="nav-login-btn">Log In</button>
+            <button class="btn-signup" id="nav-signup-btn">Sign Up</button>
+        </div>
+    </header>
+
+    <div class="explore-wrapper container">
+        
+        <aside class="sidebar-filters">
+            <div class="filter-group-box">
+                <h3><i class="fa-solid fa-sliders"></i> Sort Recipes</h3>
+                <select id="sort-selector" class="filter-select">
+                    <option value="default">Default Catalog</option>
+                    <option value="rating-high">Highest Rated (★)</option>
+                    <option value="calories-low">Lowest Calories</option>
+                    <option value="time-low">Fastest Prep Time</option>
+                </select>
+            </div>
+
+            <div class="filter-group-box">
+                <h3><i class="fa-solid fa-utensils"></i> Meal Category</h3>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" class="category-filter" value="Breakfast"> Breakfast</label>
+                    <label><input type="checkbox" class="category-filter" value="Lunch"> Lunch</label>
+                    <label><input type="checkbox" class="category-filter" value="Dinner"> Dinner</label>
+                    <label><input type="checkbox" class="category-filter" value="Dessert"> Dessert</label>
+                </div>
+            </div>
+
+            <div class="filter-group-box">
+                <h3><i class="fa-solid fa-leaf"></i> Dietary Requirements</h3>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="diet-veg-filter" value="Vegetarian"> Pure Vegetarian</label>
+                </div>
+            </div>
+        </aside>
+
+        <main class="explore-main-content">
+            <div class="explore-search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="explore-live-search" placeholder="Type dish titles or specific ingredients to filter cards instantly...">
+            </div>
+
+            <div class="results-counter">
+                Showing <span id="current-count">0</span> recipes
+            </div>
+
+            <div class="recipe-grid" id="explore-recipes-grid">
+                </div>
+        </main>
+    </div>
+
+    <div class="modal-overlay hidden" id="recipe-details-modal">
+        <div class="modal-box recipe-detail-box">
+            <button class="close-modal-btn" id="close-details-btn">&times;</button>
+            <div id="recipe-detail-content-target">
+                </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="signup-modal">
+        <div class="modal-box">
+            <button class="close-modal-btn">&times;</button>
+            <h2>Create Account</h2>
+            <form id="signup-form">
+                <div class="form-group"><label>Username</label><input type="text" id="signup-username" required></div>
+                <div class="form-group"><label>Email</label><input type="email" id="signup-email" required></div>
+                <div class="form-group"><label>Password</label><input type="password" id="signup-password" required></div>
+                <button type="submit" class="btn-auth-submit">Register</button>
+            </form>
+            <p class="switch-form-text">Already have an account? <a href="#" id="switch-to-login">Log In</a></p>
+        </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="login-modal">
+        <div class="modal-box">
+            <button class="close-modal-btn">&times;</button>
+            <h2>Welcome Back</h2>
+            <form id="login-form">
+                <div class="form-group"><label>Email</label><input type="email" id="login-email" required></div>
+                <div class="form-group"><label>Password</label><input type="password" id="login-password" required></div>
+                <button type="submit" class="btn-auth-submit">Sign In</button>
+            </form>
+            <p class="switch-form-text">Don't have an account? <a href="#" id="switch-to-signup">Sign Up Free</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
