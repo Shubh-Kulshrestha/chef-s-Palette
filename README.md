@@ -3,7 +3,7 @@
 Chef's Palette is a responsive, data-driven front-end web application designed to combat household food waste and eliminate daily cooking decision fatigue. By integrating a live culinary REST API, the platform empowers users to discover recipes based on what they already have in their refrigerator, plan their weekly nutritional menu, and automatically generate consolidated shopping lists.
 
 ##  Live Demo
-You can access the live deployment of the project here: **[Insert your GitHub Pages or Netlify Link Here]**
+You can access the live deployment of the project here: **https://shubh-kulshrestha.github.io/chef-s-Palette/**
 
 ---
 
