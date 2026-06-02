@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef's Palette - Discover Your Next Favorite Meal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-palette"></i> Chef's <span>Palette</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="meal-plans.html">Meal Plans</a>
+            <a href="community.html">Community</a>
+        </nav>
+        
+        <div class="auth-buttons" id="auth-ui-container">
+            <button class="btn-login" id="nav-login-btn">Log In</button>
+            <button class="btn-signup" id="nav-signup-btn">Sign Up</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Discover Your Next Favorite Meal.</h1>
+            <p>Personalized recipes based on what you love.</p>
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="global-search-input" placeholder="Search ingredients, cuisines, or dishes...">
+                <button class="btn-search" id="btn-global-search">Find Recipes</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <section class="ingredient-search-section">
+            <div class="search-box-card">
+                <h2><i class="fa-solid fa-refrigerator"></i> What's in your fridge?</h2>
+                <p>Enter the ingredients you have on hand, and Chef's Palette will recommend matching recipes!</p>
+                
+                <div class="ingredient-input-container">
+                    <input type="text" id="ingredient-input" placeholder="e.g., chicken, tomato, basil (separate with commas)">
+                    <button id="btn-find-by-ingredients"><i class="fa-solid fa-wand-magic-sparkles"></i> Recommend Meals</button>
+                </div>
+                
+                <div id="ingredient-results-container" class="hidden">
+                    <h3>Recipes You Can Make Right Now:</h3>
+                    <div class="recipe-grid" id="ingredient-recipes-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recommendations">
+            <div class="section-header">
+                <h2>Daily Recommendations For You</h2>
+                <a href="explore.html" class="view-all">View More</a>
+            </div>
+            <div class="recipe-grid" id="recommendations-grid"></div>
+        </section>
+
+        <section class="categories-section">
+            <h2>Explore by Category</h2>
+            <div class="category-grid">
+                <div class="category-card"><div class="cat-icon"><i class="fa-solid fa-egg"></i></div><p>Breakfast</p></div>
+                <div class="category-card"><div class="cat-icon"><i class="fa-solid fa-burger"></i></div><p>Lunch</p></div>
+                <div class="category-card"><div class="cat-icon"><i class="fa-solid fa-bowl-food"></i></div><p>Dinner</p></div>
+                <div class="category-card"><div class="cat-icon"><i class="fa-solid fa-cake-candles"></i></div><p>Dessert</p></div>
+                <div class="category-card"><div class="cat-icon"><i class="fa-solid fa-leaf"></i></div><p>Vegetarian</p></div>
+                <div class="category-card"><div class="cat-icon"><i class="fa-solid fa-stopwatch"></i></div><p>Quick & Easy</p></div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal-overlay hidden" id="signup-modal">
+        <div class="modal-box">
+            <button class="close-modal-btn">&times;</button>
+            <h2>Create Account</h2>
+            <p class="modal-subtitle">Join Chef's Palette to save custom kitchen preferences</p>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-username">Username</label>
+                    <input type="text" id="signup-username" placeholder="Choose a display name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" placeholder="chef@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="At least 6 characters" required>
+                </div>
+                <button type="submit" class="btn-auth-submit">Register</button>
+            </form>
+            <p class="switch-form-text">Already have an account? <a href="#" id="switch-to-login">Log In</a></p>
+        </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="login-modal">
+        <div class="modal-box">
+            <button class="close-modal-btn">&times;</button>
+            <h2>Welcome Back</h2>
+            <p class="modal-subtitle">Log in to view personalized recipes</p>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" placeholder="chef@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn-auth-submit">Sign In</button>
+            </form>
+            <p class="switch-form-text">Don't have an account? <a href="#" id="switch-to-signup">Sign Up Free</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
